@@ -1,0 +1,21 @@
+---
+title: Limitations
+description: What Dryrun does not do, said plainly.
+---
+
+- **It tests rules, it does not enforce them.** A PASS means the text and the expectation agree, not that the rule is wise, and a GREEN suite is only as good as its scenarios.
+- **The judge is a model.** Validators agree on a label, not on the truth. The golden evaluation shows how often the label matched what the authors of the cases expected, and where it did not, the miss is reported as it came out.
+- **The reasons are not stored.** The validators agree on one label and nothing else, so a case carries a label but no explanation. Anyone can disagree with a result by pointing to the sentence of the rules that decides it.
+- **Public text.** Rule sets, scenarios and labels are public and permanent on chain. Do not use it for anything you could not post.
+- **The pool cannot be taken back.** The contract has exactly ten methods and none of them returns a pool to its owner, so the pool is a promise to pay bounties.
+- **The list of cases grows.** `list_cases` returns every case of a rule set, retired ones included, so a very busy rule set makes that read bigger.
+- **A test network.** The contract runs on GenLayer Studio Next, with test GEN that has no value. Studio Next can be reset, and when it is, rule sets on it go with it.
+
+## Where the build spec is loose
+
+- **A case that has not run.** The spec lists four case results and says a suite is GREEN when all live cases PASS. A case that never ran has no result, so it keeps the suite AMBER.
+- **An empty suite.** "All live cases pass" is true of no cases, but a suite with nothing in it tests nothing. It is AMBER.
+- **The bounty at the edge.** "Only paid while the pool has funds" is read as whole or nothing: 2 GEN when the pool holds at least 2 GEN.
+- **Paying twice.** The spec says a result pays the stake back and an UNCLEAR pays a bounty. A case can run again after an update, so the stake comes back once and the bounty is paid once.
+- **A case that never ran, retired.** Its stake is returned to the author, so no stake is ever stuck.
+- **Taking the pool back.** The spec has no method for it, so none exists.

@@ -1,0 +1,21 @@
+---
+title: Rules and versions
+description: How a rule set is registered, updated and read, and why an update turns every case STALE.
+---
+
+A rule set is a name of at most 80 characters and a text of at most 2,000, owned by one address. Registering it makes **version 1**.
+
+## Updating
+
+Only the owner can call `update_rules`. It writes a new version, and the old text stays on chain: `get_rules` returns every version with who wrote it and when, and the [history page](/r) shows the lines that changed between them.
+
+- An update of the same text is refused (`the rules are unchanged`), so a version always means a change.
+- An update moves no money and touches no case. It only changes the version number, and a case whose last run read an older version now reads as `STALE`.
+
+## Why STALE
+
+A result is a statement about one text. After the rules change, a `PASS` on the old text says nothing about the new one, so the case shows `STALE` until it runs again on the current version. The suite colour ignores stale results: a stale `FAIL` does not make the suite red, and a stale `PASS` does not make it green.
+
+## What the owner cannot do
+
+The owner cannot delete a failing case to turn the suite green: retiring is public, with who retired it. The owner cannot edit the rules silently: every version is public. The owner cannot move a pool out: it leaves the contract only as bounties.

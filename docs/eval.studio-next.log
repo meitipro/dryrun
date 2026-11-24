@@ -1,0 +1,43 @@
+  0x5B5B1f2e 0.00 -> 1000.00 GEN
+  0x346698eD 0.00 -> 1000.00 GEN
+  0xf0a3091b 0.00 -> 1000.00 GEN
+  register_rules 0xd2bdb2431f04aea2b1b11adb9d16784728aa9fcfc853e577241c78b51f784946
+  fund_pool 0x6e8271153b1deffd06bfa3d4ce9cd0e790ad4c6700927341e30c1475fce31376
+  add_case 0x0519235fc5797157e4db76338eb2faf42aa5213f73e872d3021a3d14c892f2c8
+  run 0xf9368b93e5e4305c40d2cbbe4dab16564cd278be03c2d07653abc5e81afc29dc
+  1: MISS  got UNCLEAR, expected BLOCK  (case 2, UNCLEAR)
+  add_case 0xd0d4f4594770f03fd8605889e2712030f6d94adac4b842b8fe7452ab49206695
+  run 0xf31dbaf3aafb24857ad4a7eb3cf5e24312667406a4ddaa1bd341b5c1aa3cee44
+  2: MATCH got BLOCK, expected BLOCK  (case 3, PASS)
+  register_rules 0xf54f5e27efce6993b3b5c1e7898c968cc893cc8475733d3ee2070940c36745b4
+  fund_pool 0x9f48863c8aeca99ec913f2c6c78f79e2e81578d8b6000110853d42346255d4e3
+  add_case 0xd1908d11342f21a6026615922e19bd9b2e4f49d8f54f0dd7d6e2f0efbdb7e4d2
+  run 0x8d505efe307dd0b38e40c883d6f618ebda8576908c7fd0588cfe786fb4b7a1e1
+  3: MATCH got BLOCK, expected BLOCK  (case 4, PASS)
+  add_case 0xcb13ee793d3d59b03a899d86763037f8cb6e8940bffef2d09cab13af914faa59
+  run 0x0abad378c8837ee33d609dbdb9dec12f363488f41bdb609259efe670508999c6
+  4: MATCH got ALLOW, expected ALLOW  (case 5, PASS)
+  register_rules 0xe49b902d41c558bf8ca48521a29ef6881fe45c3989503e8ff2fa88d70329234f
+  fund_pool 0xf5c04940654e3a8f29919c7aa0249eb07172735e623cf4ddaefe2977cd6a1831
+  add_case 0x39c3b54705f2a22954d637a21d6a7777f4b416195150a500bb7eec97bff591d2
+  run 0xceaf5b2b8e420e2ba0dacbfe17d2f575fc97741f43460e5ce118e3c3bba71221
+  5: MATCH got ALLOW, expected ALLOW  (case 6, PASS)
+  add_case 0xd9e66d72727a9c877737288219058e550bf61cf92958c5b239f377577c2d630d
+  run 0x3cb57cd567e90b807704bfa09810c726f1c88cd4f8fd8ddc4dd5553b3780a127
+  6: MATCH got UNCLEAR, expected UNCLEAR  (case 7, UNCLEAR)
+  add_case 0xb3ff1246cf3d604926edbc11b77667c5ecbfb481fb92cebf090184b4f0ad7f55
+  run 0xfdc6f8c4d7d642c635ac7da21a83391aff51aaccde7224bb54e657a516c4ffe4
+  7: MISS  got ALLOW, expected UNCLEAR  (case 8, FAIL)
+  register_rules 0xe024c55d0df117848a777863cb927723edd1aec1a35a1d7152dd7b9d1ad757b2
+  fund_pool 0x4455248264ad179db3099ffde1a48f21d051c3dcb1779a9a1ee08811ee366b23
+  add_case 0xda27c90042fd7516e7f96103da01ff5cedb4378243cbb62e0d23299b501d69ca
+  run 0xd8547d90b9e07437844d9adcd47d839ac39e76853a064982230f56c1ce1b7219
+  8: MATCH got UNCLEAR, expected UNCLEAR  (case 9, UNCLEAR)
+  add_case 0xff22885e9455f19be97f1c1550a712a82fd70d0b21fb1dbafa318440c8572648
+  run 0xcb223a387a1eb2308d35e50e5e8693fcf4ba50e653fc211ffef2f8284571efad
+  9: MATCH got ALLOW, expected ALLOW  (case 10, PASS)
+  add_case 0x3aa6cb41475b6fe227fa19c46b1ba1cae386a35c9e0833ff4af6015fe5500078
+  run 0x3bc9c0e81c23e358d9814428daa8e3e3d0ea867601df0d6eddd7f484a4683833
+ 10: MATCH got ALLOW, expected ALLOW  (case 11, PASS)
+
+wrote eval/results.md: golden 8/10

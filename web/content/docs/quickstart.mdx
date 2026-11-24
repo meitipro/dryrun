@@ -1,0 +1,159 @@
+---
+title: 'Quickstart: register a rule set'
+description: Register a rule set, fund its pool, add a case and run it, in about ten minutes.
+---
+
+<Callout type="warn">Rule sets and scenarios are public and permanent. Write only what can be public.</Callout>
+
+## 1. Register and fund
+
+<Tabs items={['On the site', 'From code']}>
+  <Tab value="On the site">
+    <Steps>
+      <Step>
+        Open [Rule sets](/r), scroll to **Register a rule set** and connect a wallet. The site walks you through **Connect wallet**, **Switch network** (it adds chain 61997 if your wallet lacks it) and **Get test GEN**.
+      </Step>
+      <Step>
+        Type a name of at most 80 characters and the rules in plain English, at most 2,000 characters. Press **$ dryrun register**. The new suite page is the link you share.
+      </Step>
+      <Step>
+        On the suite page, type an amount under **dryrun fund** and press **$ dryrun fund**. Only the owner can fund the pool, and the pool leaves the contract only as bounties.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab value="From code">
+    The call is `register_rules(name, rules)`, then `fund_pool(rules_id)` with the funding as the value sent. This script is the one that runs: with `--dry` it prints the call and the fee deposit the SDK estimates, and sends nothing.
+
+{/* include: examples/register-rules.mjs */}
+```js title="examples/register-rules.mjs"
+/**
+ * Register a rule set from a script, signing with a local test account.
+ *
+ *   node examples/register-rules.mjs <account name> <rules.json> [--dry]
+ *
+ * rules.json holds { "name", "rules" }, the shape of examples/rules.json.
+ * With --dry nothing is sent: it prints the call and the fee deposit the SDK estimates for it.
+ * The site's own signing code (lib/genlayer-core.mjs) does the work, through a stand-in EIP-1193 wallet.
+ */
+import fs from 'node:fs';
+
+import { CONTRACT, feesFor, outcomeOf, submit, waitDecided, walletClient } from '../lib/genlayer-core.mjs';
+import { ensureAccount, standinWallet } from '../scripts/standin-wallet.mjs';
+
+const [name, file, ...flags] = process.argv.slice(2);
+if (!name || !file) {
+  console.error('usage: node examples/register-rules.mjs <account name> <rules.json> [--dry]');
+  process.exit(2);
+}
+const set = JSON.parse(fs.readFileSync(file, 'utf8'));
+ensureAccount(name);
+const { address, provider } = standinWallet(name);
+const client = walletClient(address, provider);
+const args = [set.name, set.rules];
+
+if (flags.includes('--dry')) {
+  const fees = await feesFor(client, 'register_rules', address);
+  console.log(JSON.stringify({ contract: CONTRACT, method: 'register_rules', from: address, name: set.name, rule_chars: set.rules.length, feeValue: String(fees.feeValue) }));
+  await new Promise((r) => setTimeout(r, 200));
+  process.exit(0);
+}
+const hash = await submit(client, { method: 'register_rules', args, value: 0n, sender: address });
+const outcome = outcomeOf(await waitDecided(client, hash, 'register_rules'));
+console.log(JSON.stringify({ hash, ok: outcome.ok, rules_id: outcome.returned ?? null, refusal: outcome.refusal || null }));
+process.exit(outcome.ok ? 0 : 1);
+```
+{/* end include */}
+
+    It reads the shape below.
+
+{/* include: examples/rules.json */}
+```json title="examples/rules.json"
+{
+  "name": "community-rules",
+  "rules": "1. Be respectful, no harassment.\n2. Members must be 18 or older.\n3. No spam.\n4. Members may not promote other projects in the main channel.\n5. Moderators must give a reason for removing a post."
+}
+```
+{/* end include */}
+  </Tab>
+</Tabs>
+
+## 2. Add a case and run it
+
+Any wallet can add a case. See [Add a case](/docs/add-a-case).
+
+## 3. Read the suite
+
+Everything you see on the site is two reads, `get_rules` and `list_cases`:
+
+{/* include: examples/read-suite.mjs */}
+```js title="examples/read-suite.mjs"
+/**
+ * Read a suite, no wallet and nothing signed.
+ *
+ *   node examples/read-suite.mjs <rules id>
+ *
+ * get_rules answers JSON text: the rules, the version, the pool, the suite colour and the counts.
+ * list_cases answers every case with its result on the current rules.
+ */
+import { CONTRACT, readClient, retried } from '../lib/genlayer-core.mjs';
+
+const [id] = process.argv.slice(2);
+if (!id) {
+  console.error('usage: node examples/read-suite.mjs <rules id>');
+  process.exit(2);
+}
+const client = readClient();
+const read = async (functionName) => JSON.parse(String(await retried(() => client.readContract({ address: CONTRACT, functionName, args: [Number(id)] }))));
+const rules = await read('get_rules');
+const list = await read('list_cases');
+console.log(
+  JSON.stringify({
+    found: rules.found,
+    name: rules.name,
+    version: rules.version,
+    suite: rules.suite,
+    counts: rules.counts,
+    cases: (list.cases ?? []).map((c) => ({ id: c.id, expected: c.expected, label: c.label, result: c.result })),
+  }),
+);
+```
+{/* end include */}
+
+Or from Python:
+
+{/* include: examples/read_suite.py */}
+```python title="examples/read_suite.py"
+"""
+Read a suite from Python with genlayer-py 0.19.0rc2.
+
+    python web/examples/read_suite.py <rules id>
+
+Reads need an account even for views, so a throwaway one is made and never funded.
+"""
+import json
+import sys
+
+from genlayer_py import create_account, create_client
+from genlayer_py.chains import studio_devnet
+
+CONTRACT = json.load(open("web/lib/deployment.json"))["dryrun"]
+studio_devnet.rpc_urls = {"default": {"http": ["https://studio-next.genlayer.com/api"]}}
+
+client = create_client(chain=studio_devnet, account=create_account())
+rules_id = int(sys.argv[1])
+rules = json.loads(client.read_contract(address=CONTRACT, function_name="get_rules", args=[rules_id]))
+cases = json.loads(client.read_contract(address=CONTRACT, function_name="list_cases", args=[rules_id])).get("cases", [])
+print(json.dumps({
+    "found": rules["found"],
+    "name": rules.get("name"),
+    "version": rules.get("version"),
+    "suite": rules.get("suite"),
+    "counts": rules.get("counts"),
+    "cases": [{"id": c["id"], "expected": c["expected"], "label": c["label"], "result": c["result"]} for c in cases],
+}))
+```
+{/* end include */}
+
+## 4. Fix the rules and run again
+
+When a case fails, or turns out to be unclear, the owner writes a new version with **$ dryrun update-rules**. Every live case turns `STALE`, and each one has to run again. The [history page](/docs/concepts/rules-and-versions) shows what each update changed.

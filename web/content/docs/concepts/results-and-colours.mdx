@@ -1,0 +1,30 @@
+---
+title: Results and colours
+description: How a case result and the suite colour are computed in code from the label and the expectation.
+---
+
+The model answers one label. Everything after that is contract code.
+
+## A case
+
+| Result | When |
+|---|---|
+| `PASS` | the label equals the expectation |
+| `FAIL` | the label is the opposite of the expectation (`ALLOW` against `BLOCK`, or the reverse) |
+| `UNCLEAR` | the label is `UNCLEAR`, whatever the author expected |
+| `STALE` | the rules changed after the last run: run it again |
+| not run | the case has never run, so it has no result |
+
+## The suite
+
+| Colour | When | Money |
+|---|---|---|
+| `GREEN` | there is at least one live case and every live case passes on the current rules | pool untouched |
+| `AMBER` | no live case fails, and at least one is `UNCLEAR`, `STALE`, not yet run, or there is no live case at all | a bounty for each new `UNCLEAR` |
+| `RED` | at least one live case fails on the current rules | pool untouched |
+
+`RED` beats `AMBER`. Retired cases are not counted. A suite with no live case tests nothing, so it is `AMBER`, never `GREEN`, and a case that has not run on the current rules cannot make a suite green.
+
+## Why code, not the model
+
+The colour must always mean the same thing. If the model said whether a suite was green, the colour would be its opinion. Here it is `suite_of(live, passed, failed)`, a pure function in the contract, and the model never sees a result, an expectation or a colour.

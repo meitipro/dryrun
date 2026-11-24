@@ -1,0 +1,28 @@
+---
+title: FAQ and changelog
+description: Common questions, and what changed.
+---
+
+## FAQ
+
+**Is it enforcement?** No. Dryrun tests rules, it does not stop anyone from doing anything.
+
+**Who decides PASS or FAIL?** The contract, by comparing the validators' label with the author's expectation. The model never says whether a case passed.
+
+**Is it a vote?** No. Each validator reads the same rules and the same scenario and answers one label. A label stands only when they agree on it.
+
+**Who can add cases?** Anyone, with a stake of 1 GEN. Up to 40 live cases per rule set.
+
+**Why can anyone call `run`?** So a case does not wait for its author to come back. What a case says is a function of the rules and the scenario already on chain, and the caller is recorded. The stake and the bounty go to the author.
+
+**What if I disagree with a result?** Point to the sentence of the rules that decides it, and ask the owner to retire the case or fix the rules. A wrong label is visible against the text.
+
+**What does it cost?** The stake, which comes back, plus Studio Next's small fee deposit on every write, most of which is refunded.
+
+**Which network?** GenLayer Studio Next, chain 61997. Test GEN is free from the site's faucet.
+
+## Changelog
+
+**v1, November 2026.** The first deployment on Studio Next: ten methods, the judge prompt from the build spec word for word, label-only agreement, results and colours computed in code, balances with a single top-level `withdraw`. The deployed address and source hash are on the [addresses page](/docs/reference/addresses).
+
+The runtime header is `py-genlayer:kzybg95x…`, the GenVM v0.4 runner. The older v0.3 headers (`babwp9t3…` and `5jycge4q…`) are rejected by the live network (`invalid_contract runner malformed`). Payouts use `gl.chain.Account(address).emit_transfer(value)`, the v0.4 form.

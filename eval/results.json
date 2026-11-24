@@ -1,0 +1,458 @@
+{
+  "rule_sets": {
+    "promo": {
+      "steps": {
+        "register": {
+          "ok": true,
+          "hash": "0xd2bdb2431f04aea2b1b11adb9d16784728aa9fcfc853e577241c78b51f784946",
+          "returned": 2,
+          "detail": "",
+          "at": "2026-11-23T15:37:21Z"
+        },
+        "fund": {
+          "ok": true,
+          "hash": "0x6e8271153b1deffd06bfa3d4ce9cd0e790ad4c6700927341e30c1475fce31376",
+          "returned": 10000000000000000000,
+          "detail": "",
+          "at": "2026-11-23T15:37:29Z"
+        }
+      },
+      "id": 2
+    },
+    "age": {
+      "steps": {
+        "register": {
+          "ok": true,
+          "hash": "0xf54f5e27efce6993b3b5c1e7898c968cc893cc8475733d3ee2070940c36745b4",
+          "returned": 3,
+          "detail": "",
+          "at": "2026-11-23T15:39:56Z"
+        },
+        "fund": {
+          "ok": true,
+          "hash": "0x9f48863c8aeca99ec913f2c6c78f79e2e81578d8b6000110853d42346255d4e3",
+          "returned": 10000000000000000000,
+          "detail": "",
+          "at": "2026-11-23T15:40:05Z"
+        }
+      },
+      "id": 3
+    },
+    "five": {
+      "steps": {
+        "register": {
+          "ok": true,
+          "hash": "0xe49b902d41c558bf8ca48521a29ef6881fe45c3989503e8ff2fa88d70329234f",
+          "returned": 4,
+          "detail": "",
+          "at": "2026-11-23T15:41:00Z"
+        },
+        "fund": {
+          "ok": true,
+          "hash": "0xf5c04940654e3a8f29919c7aa0249eb07172735e623cf4ddaefe2977cd6a1831",
+          "returned": 10000000000000000000,
+          "detail": "",
+          "at": "2026-11-23T15:41:08Z"
+        }
+      },
+      "id": 4
+    },
+    "mods": {
+      "steps": {
+        "register": {
+          "ok": true,
+          "hash": "0xe024c55d0df117848a777863cb927723edd1aec1a35a1d7152dd7b9d1ad757b2",
+          "returned": 5,
+          "detail": "",
+          "at": "2026-11-23T15:42:59Z"
+        },
+        "fund": {
+          "ok": true,
+          "hash": "0x4455248264ad179db3099ffde1a48f21d051c3dcb1779a9a1ee08811ee366b23",
+          "returned": 10000000000000000000,
+          "detail": "",
+          "at": "2026-11-23T15:43:06Z"
+        }
+      },
+      "id": 5
+    },
+    "spam": {
+      "steps": {
+        "register": {
+          "ok": true,
+          "hash": "0x964c40384fe0a54b8553aeafbd95f0651b972c5866aa680166e0295f294e4b48",
+          "returned": 6,
+          "detail": "",
+          "at": "2026-11-23T15:45:41Z"
+        },
+        "fund": {
+          "ok": true,
+          "hash": "0x33d80968a44dc68d3b6e8b8d73934fbaedb2553c66a8e31c3ce1f52da6b77eef",
+          "returned": 10000000000000000000,
+          "detail": "",
+          "at": "2026-11-23T15:45:56Z"
+        }
+      },
+      "id": 6
+    },
+    "respect": {
+      "steps": {
+        "register": {
+          "ok": true,
+          "hash": "0xf8e1d7d1345ba735d087e8a7b7538ff9d9208f749dd3b183902e6985ef71e16f",
+          "returned": 8,
+          "detail": "",
+          "at": "2026-11-23T15:46:43Z"
+        },
+        "fund": {
+          "ok": true,
+          "hash": "0xd1f9fb51b63d1d8da86ecf45ceb3c6802393b0f2cf44b88e7dbbd7fca5c9de0a",
+          "returned": 10000000000000000000,
+          "detail": "",
+          "at": "2026-11-23T15:46:51Z"
+        }
+      },
+      "id": 8
+    }
+  },
+  "cases": {
+    "1": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0x0519235fc5797157e4db76338eb2faf42aa5213f73e872d3021a3d14c892f2c8",
+          "returned": 2,
+          "detail": "",
+          "at": "2026-11-23T15:37:37Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xf9368b93e5e4305c40d2cbbe4dab16564cd278be03c2d07653abc5e81afc29dc",
+          "sent_at": "2026-11-23T15:38:03Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 2,
+      "rules_id": 2,
+      "submitted_as": "BLOCK",
+      "label": "UNCLEAR",
+      "result": "UNCLEAR",
+      "run_tx": "0xf9368b93e5e4305c40d2cbbe4dab16564cd278be03c2d07653abc5e81afc29dc",
+      "bounty": "2000000000000000000"
+    },
+    "2": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xd0d4f4594770f03fd8605889e2712030f6d94adac4b842b8fe7452ab49206695",
+          "returned": 3,
+          "detail": "",
+          "at": "2026-11-23T15:38:11Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xf31dbaf3aafb24857ad4a7eb3cf5e24312667406a4ddaa1bd341b5c1aa3cee44",
+          "sent_at": "2026-11-23T15:39:48Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 3,
+      "rules_id": 2,
+      "submitted_as": "BLOCK",
+      "label": "BLOCK",
+      "result": "PASS",
+      "run_tx": "0xf31dbaf3aafb24857ad4a7eb3cf5e24312667406a4ddaa1bd341b5c1aa3cee44",
+      "bounty": "0"
+    },
+    "3": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xd1908d11342f21a6026615922e19bd9b2e4f49d8f54f0dd7d6e2f0efbdb7e4d2",
+          "returned": 4,
+          "detail": "",
+          "at": "2026-11-23T15:40:14Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0x8d505efe307dd0b38e40c883d6f618ebda8576908c7fd0588cfe786fb4b7a1e1",
+          "sent_at": "2026-11-23T15:40:28Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 4,
+      "rules_id": 3,
+      "submitted_as": "BLOCK",
+      "label": "BLOCK",
+      "result": "PASS",
+      "run_tx": "0x8d505efe307dd0b38e40c883d6f618ebda8576908c7fd0588cfe786fb4b7a1e1",
+      "bounty": "0"
+    },
+    "4": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xcb13ee793d3d59b03a899d86763037f8cb6e8940bffef2d09cab13af914faa59",
+          "returned": 5,
+          "detail": "",
+          "at": "2026-11-23T15:40:37Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0x0abad378c8837ee33d609dbdb9dec12f363488f41bdb609259efe670508999c6",
+          "sent_at": "2026-11-23T15:40:51Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 5,
+      "rules_id": 2,
+      "submitted_as": "ALLOW",
+      "label": "ALLOW",
+      "result": "PASS",
+      "run_tx": "0x0abad378c8837ee33d609dbdb9dec12f363488f41bdb609259efe670508999c6",
+      "bounty": "0"
+    },
+    "5": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0x39c3b54705f2a22954d637a21d6a7777f4b416195150a500bb7eec97bff591d2",
+          "returned": 6,
+          "detail": "",
+          "at": "2026-11-23T15:41:16Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xceaf5b2b8e420e2ba0dacbfe17d2f575fc97741f43460e5ce118e3c3bba71221",
+          "sent_at": "2026-11-23T15:41:35Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 6,
+      "rules_id": 4,
+      "submitted_as": "ALLOW",
+      "label": "ALLOW",
+      "result": "PASS",
+      "run_tx": "0xceaf5b2b8e420e2ba0dacbfe17d2f575fc97741f43460e5ce118e3c3bba71221",
+      "bounty": "0"
+    },
+    "6": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xd9e66d72727a9c877737288219058e550bf61cf92958c5b239f377577c2d630d",
+          "returned": 7,
+          "detail": "",
+          "at": "2026-11-23T15:41:44Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0x3cb57cd567e90b807704bfa09810c726f1c88cd4f8fd8ddc4dd5553b3780a127",
+          "sent_at": "2026-11-23T15:42:06Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 7,
+      "rules_id": 2,
+      "submitted_as": "BLOCK",
+      "label": "UNCLEAR",
+      "result": "UNCLEAR",
+      "run_tx": "0x3cb57cd567e90b807704bfa09810c726f1c88cd4f8fd8ddc4dd5553b3780a127",
+      "bounty": "2000000000000000000"
+    },
+    "7": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xb3ff1246cf3d604926edbc11b77667c5ecbfb481fb92cebf090184b4f0ad7f55",
+          "returned": 8,
+          "detail": "",
+          "at": "2026-11-23T15:42:25Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xfdc6f8c4d7d642c635ac7da21a83391aff51aaccde7224bb54e657a516c4ffe4",
+          "sent_at": "2026-11-23T15:42:44Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 8,
+      "rules_id": 2,
+      "submitted_as": "BLOCK",
+      "label": "ALLOW",
+      "result": "FAIL",
+      "run_tx": "0xfdc6f8c4d7d642c635ac7da21a83391aff51aaccde7224bb54e657a516c4ffe4",
+      "bounty": "0"
+    },
+    "8": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xda27c90042fd7516e7f96103da01ff5cedb4378243cbb62e0d23299b501d69ca",
+          "returned": 9,
+          "detail": "",
+          "at": "2026-11-23T15:43:20Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xd8547d90b9e07437844d9adcd47d839ac39e76853a064982230f56c1ce1b7219",
+          "sent_at": "2026-11-23T15:44:17Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 9,
+      "rules_id": 5,
+      "submitted_as": "BLOCK",
+      "label": "UNCLEAR",
+      "result": "UNCLEAR",
+      "run_tx": "0xd8547d90b9e07437844d9adcd47d839ac39e76853a064982230f56c1ce1b7219",
+      "bounty": "2000000000000000000"
+    },
+    "9": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xff22885e9455f19be97f1c1550a712a82fd70d0b21fb1dbafa318440c8572648",
+          "returned": 10,
+          "detail": "",
+          "at": "2026-11-23T15:44:26Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xcb223a387a1eb2308d35e50e5e8693fcf4ba50e653fc211ffef2f8284571efad",
+          "sent_at": "2026-11-23T15:44:39Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 10,
+      "rules_id": 2,
+      "submitted_as": "ALLOW",
+      "label": "ALLOW",
+      "result": "PASS",
+      "run_tx": "0xcb223a387a1eb2308d35e50e5e8693fcf4ba50e653fc211ffef2f8284571efad",
+      "bounty": "0"
+    },
+    "10": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0x3aa6cb41475b6fe227fa19c46b1ba1cae386a35c9e0833ff4af6015fe5500078",
+          "returned": 11,
+          "detail": "",
+          "at": "2026-11-23T15:44:48Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0x3bc9c0e81c23e358d9814428daa8e3e3d0ea867601df0d6eddd7f484a4683833",
+          "sent_at": "2026-11-23T15:45:12Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 11,
+      "rules_id": 3,
+      "submitted_as": "ALLOW",
+      "label": "ALLOW",
+      "result": "PASS",
+      "run_tx": "0x3bc9c0e81c23e358d9814428daa8e3e3d0ea867601df0d6eddd7f484a4683833",
+      "bounty": "0"
+    },
+    "H1": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xd97998f9cd49375182154751b849a6f0923cbef138a7b9a5ca99ab331b3e4e61",
+          "returned": 12,
+          "detail": "",
+          "at": "2026-11-23T15:46:10Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0x5e14793130dc77d61542080a926b9c8594f8fdbc311d3a460c39475cb4784f2c",
+          "sent_at": "2026-11-23T15:46:29Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 12,
+      "rules_id": 6,
+      "submitted_as": "BLOCK",
+      "label": "UNCLEAR",
+      "result": "UNCLEAR",
+      "run_tx": "0x5e14793130dc77d61542080a926b9c8594f8fdbc311d3a460c39475cb4784f2c",
+      "bounty": "2000000000000000000"
+    },
+    "H2": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0x30a6ba59fe556ca3e738babb7a927087913c9d24792371549f6b79eebd5a9b8b",
+          "returned": 15,
+          "detail": "",
+          "at": "2026-11-23T15:47:05Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0xb9af436896388101f5f07e3da88b7ea098c6eea0a83269c9544cafa6a58e9366",
+          "sent_at": "2026-11-23T15:48:37Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 15,
+      "rules_id": 8,
+      "submitted_as": "BLOCK",
+      "label": "UNCLEAR",
+      "result": "UNCLEAR",
+      "run_tx": "0xb9af436896388101f5f07e3da88b7ea098c6eea0a83269c9544cafa6a58e9366",
+      "bounty": "2000000000000000000"
+    },
+    "H3": {
+      "steps": {
+        "add": {
+          "ok": true,
+          "hash": "0xac1a1ec25be4b33d3d76d3f82c4f1f13ffa2bdcbc8b4f235127932588d32632b",
+          "returned": 17,
+          "detail": "",
+          "at": "2026-11-23T15:49:26Z"
+        }
+      },
+      "tries": [
+        {
+          "tx": "0x14195d44b669e647453a947c5d39f303f3fa6124831f01716ca16552d43bb788",
+          "sent_at": "2026-11-23T15:50:07Z",
+          "consensus": "decided"
+        }
+      ],
+      "case_id": 17,
+      "rules_id": 2,
+      "submitted_as": "BLOCK",
+      "label": "BLOCK",
+      "result": "PASS",
+      "run_tx": "0x14195d44b669e647453a947c5d39f303f3fa6124831f01716ca16552d43bb788",
+      "bounty": "0"
+    }
+  },
+  "contract": "0x7e18514fF9D907b48d7e9588B02F188320E48DFa",
+  "contract_sha256": "508dc89866efbc3907ec1ebd9f0ea001b02978fb418a963ac441e754fd66671c",
+  "golden_sha256": "901e362f3e9a2e80d86256e3d2d4867301b15ff74ec286083e012fa324b4d2d5",
+  "golden_locked_at": "2026-11-23T15:37:06Z",
+  "judge_sha256": "3df72c6a49dad935abca0740a0c4f4e7d9d651d7682b9e7fb735eb42b304f9fe",
+  "network": "studio-next",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "owner": "0x5B5B1f2ee26A606773e4eCb12255a156BC2A4047",
+  "author": "0x346698eD8bd99D0B09BF614E9305eB2a28E83dC8",
+  "runner": "0xf0a3091b04511F2F7f69B9D9c8Fd9cF5b5e1B92F",
+  "stray_rule_sets": {
+    "1": "A live smoke run of the deployed contract before the golden set was locked: register, fund, one case (the spec's podcast example, expected BLOCK) and its run, which came back BLOCK, then a withdrawal. It is not part of the evaluation and not scored."
+  }
+}

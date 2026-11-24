@@ -1,0 +1,32 @@
+---
+title: Add a case
+description: Add a scenario with the answer you expect, run it, and read the three outcomes.
+---
+
+<Callout type="warn">Commit to a prediction before the run. A case is a test: you say what you expect, and the rules answer.</Callout>
+
+## The command line
+
+Open a suite and press **dryrun add**, or go to `/r/<id>/add`. The page is a command line:
+
+1. Type the **scenario**, at most 240 characters. Write the situation as a sentence about what happened, not a question about the rules.
+2. Pick the **expected** answer, `ALLOW` or `BLOCK`. These are the only two predictions an author can make. `UNCLEAR` is what the validators find, never what you predict.
+3. Press **run it, 1 GEN**. The wallet signs two transactions: `add_case`, which holds your stake of exactly 1 GEN, and `run`, which sends the case to the validators.
+
+If the second transaction fails, the case is already added. Anyone can run it from the suite page, and the stake and any bounty are still yours.
+
+## The three outcomes
+
+| Result | What the validators said | What happens |
+|---|---|---|
+| `PASS` | the label is your expectation | the stake comes back to your balance |
+| `FAIL` | the label is the opposite | the stake comes back, and the case is flagged for the owner |
+| `UNCLEAR` | the rules do not settle it | the stake comes back, and you earn the bounty of 2 GEN from the pool while it has funds |
+
+Nothing is paid out by the run. The stake and the bounty are added to your balance, and **withdraw** on [My rules and cases](/me) is the only call that sends money.
+
+## Limits
+
+- At most 40 **live** cases per rule set. The owner or the author can retire a case, which frees its slot. A retired case stays visible, with who retired it.
+- A case runs once per version of the rules. After an update it shows `STALE` and can run again.
+- A case you retire before it has run returns its stake and earns nothing.

@@ -1,0 +1,15 @@
+  register_rules 0x964c40384fe0a54b8553aeafbd95f0651b972c5866aa680166e0295f294e4b48
+  fund_pool 0x33d80968a44dc68d3b6e8b8d73934fbaedb2553c66a8e31c3ce1f52da6b77eef
+  add_case 0xd97998f9cd49375182154751b849a6f0923cbef138a7b9a5ca99ab331b3e4e61
+  run 0x5e14793130dc77d61542080a926b9c8594f8fdbc311d3a460c39475cb4784f2c
+ H1: held out got UNCLEAR, expected EITHER  (case 12, UNCLEAR)
+  register_rules 0xf8e1d7d1345ba735d087e8a7b7538ff9d9208f749dd3b183902e6985ef71e16f
+  fund_pool 0xd1f9fb51b63d1d8da86ecf45ceb3c6802393b0f2cf44b88e7dbbd7fca5c9de0a
+  add_case 0x30a6ba59fe556ca3e738babb7a927087913c9d24792371549f6b79eebd5a9b8b
+  run 0xb9af436896388101f5f07e3da88b7ea098c6eea0a83269c9544cafa6a58e9366
+ H2: held out got UNCLEAR, expected EITHER  (case 15, UNCLEAR)
+  add_case 0xac1a1ec25be4b33d3d76d3f82c4f1f13ffa2bdcbc8b4f235127932588d32632b
+  run 0x14195d44b669e647453a947c5d39f303f3fa6124831f01716ca16552d43bb788
+ H3: held out got BLOCK, expected EITHER  (case 17, PASS)
+
+wrote eval/results.md: golden 8/10

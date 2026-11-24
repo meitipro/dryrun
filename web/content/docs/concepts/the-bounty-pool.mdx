@@ -1,0 +1,22 @@
+---
+title: The bounty pool
+description: How the pool is funded, what a bounty is, and the rules that keep the pool from being drained.
+---
+
+The owner funds a **pool** per rule set with `fund_pool`. A **bounty** is 2 GEN, paid to the author of a case the first time the validators find that the rules do not settle it.
+
+## The rules
+
+- **Whole or not at all.** A bounty is paid only while the pool holds at least 2 GEN. When it does not, nothing is paid, the stake still comes back, and the case still counts for the suite.
+- **Once per case.** Re-running a case after an update cannot earn a second bounty. A case that missed its bounty for want of funds can earn it later, if the pool is refilled.
+- **To the author.** The bounty goes to the author of the case, never to whoever called `run`.
+- **Only the owner funds.** And the pool has no way back out: it leaves the contract only as bounties.
+- **Never below zero.** The pool is checked before every bounty, and a test breaks every defence one at a time to prove it.
+
+## Where the money moves
+
+`add_case` and `fund_pool` take value in. `register_rules`, `update_rules`, `run` and `retire_case` only move balances inside the contract. `withdraw` is the one payout, a top-level transfer of the caller's own balance, so a payout never happens inside a validator round.
+
+## What the owner is paying for
+
+A bounty is the price of finding a gap before a member does. An owner who would rather not pay can fund nothing, and the suite still works: cases still run, and the stake still comes back.

@@ -1,0 +1,30 @@
+---
+title: Introduction
+description: Dryrun is a test suite for plain-language rules, decided by GenLayer validators and computed by a contract.
+---
+
+<Callout>Dryrun tests rules, it does not enforce them. A label is a prediction about what the text says, not a ruling on a person.</Callout>
+
+A rule like "members may not promote other projects in the main channel" sounds clear until a member shares a podcast. The argument that follows is the first time anyone checks what the rule means. Code has tests, policy has none. **Dryrun gives a written rule set a test suite.**
+
+## What it does
+
+1. An owner **registers** a rule set of at most 2,000 characters, as version 1, and funds a **bounty pool**.
+2. Anyone **adds a case**: a scenario of at most 240 characters, the answer they expect (`ALLOW` or `BLOCK`), and a stake of 1 GEN.
+3. Anyone **runs** the case. GenLayer **validators** read the rules and the scenario and answer one label: `ALLOW`, `BLOCK` or `UNCLEAR`.
+4. The contract compares the label with the expectation and computes the **result**: `PASS`, `FAIL` or `UNCLEAR`. A case run on older rules shows `STALE`.
+5. The suite is `GREEN`, `AMBER` or `RED`, computed from the cases. A scenario that exposes a gap earns its author a **bounty** of 2 GEN.
+
+## What the validators decide, and what they do not
+
+They decide one thing: what the rules, as written, say about one scenario. They never see what the author expected, never see the pool, and are never asked whether the rules are good. The model does not say whether a case passed and does not say what colour the suite is: the contract does, from the label and the expectation.
+
+## What is on chain
+
+Everything: every version of the rules, every scenario, every label, every result, the pool and every bounty. A result is never read against the wrong text, because an update turns every case `STALE` until it runs again.
+
+## Where to go next
+
+- **Own some rules?** [Register a rule set](/docs/quickstart).
+- **Found a gap?** [Add a case](/docs/add-a-case).
+- **Reviewing it?** Read [the judge prompt, word for word](/docs/more/judge-prompt), the [evaluation results with transactions](/docs/more/evaluation), and the [limitations](/docs/more/limitations).

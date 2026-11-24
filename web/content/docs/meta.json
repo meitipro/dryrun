@@ -1,0 +1,15 @@
+{
+  "title": "dryrun docs",
+  "pages": [
+    "---Getting started---",
+    "index",
+    "quickstart",
+    "add-a-case",
+    "---Concepts---",
+    "...concepts",
+    "---Reference---",
+    "...reference",
+    "---More---",
+    "...more"
+  ]
+}

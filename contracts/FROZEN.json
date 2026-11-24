@@ -1,0 +1,16 @@
+{
+  "deployments": {
+    "studio-next": {
+      "chain_id": 61997,
+      "deployed_at": "2026-11-23T15:33:14Z",
+      "dryrun": "0x7e18514fF9D907b48d7e9588B02F188320E48DFa",
+      "dryrun_deployer": "0x93707df1a51D600Aafbb4812d06BEE05da26209c",
+      "dryrun_file": "contracts/dryrun.py",
+      "dryrun_sha256": "508dc89866efbc3907ec1ebd9f0ea001b02978fb418a963ac441e754fd66671c",
+      "dryrun_tx": "0xdf68ab84185438a442531f42008f22f5ad01d543d8b937caa34b446ebedb4ba9",
+      "explorer": "https://explorer-studio-dev.genlayer.com",
+      "rpc": "https://studio-next.genlayer.com/api",
+      "runtime": "py-genlayer:kzybg95x1gn21dw72m7hyg0maaap04n4nx55j9yt6fkdqxtz6bz0"
+    }
+  }
+}
