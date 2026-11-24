@@ -1,0 +1,16 @@
+{
+  "Contract": "https://explorer-studio-dev.genlayer.com/address/0x7e18514fF9D907b48d7e9588B02F188320E48DFa",
+  "Deploy tx": "https://explorer-studio-dev.genlayer.com/tx/0xdf68ab84185438a442531f42008f22f5ad01d543d8b937caa34b446ebedb4ba9",
+  "Live run: register_rules": "https://explorer-studio-dev.genlayer.com/tx/0xfb631c1580bc2061bdd7812b2015c270aa2f906d8d246c33f203243640311570",
+  "Live run: add_case (the spec's podcast example)": "https://explorer-studio-dev.genlayer.com/tx/0x53a67e6b70e2de1b5edece6a068174f3a7a5b50734b6e20ec6b0e0e0a55e8161",
+  "Live run: run, UNCLEAR with a bounty": "https://explorer-studio-dev.genlayer.com/tx/0x6caaed8e0ca65b2c160b9a7687904acf9b63ae5970bb13187061d8a50686e8b4",
+  "Live run: update_rules, every case turns STALE": "https://explorer-studio-dev.genlayer.com/tx/0x674ed0dd4771edb4b2d1f9e17460343d1d453c2d7d6cf635fd74bd9fb7e54fbe",
+  "Live run: run again, GREEN": "https://explorer-studio-dev.genlayer.com/tx/0xcb03d742c64ba217c8544f95892ef031797a62a1a864e642238eb58cf5447bd5",
+  "Live run: withdraw": "https://explorer-studio-dev.genlayer.com/tx/0x2631cf24ac119eb4f34f2bbfac82da202375b6133d8d8742dfdd0c750c483d7f",
+  "Seed: a red suite, the FAIL": "https://explorer-studio-dev.genlayer.com/tx/0xfb1a71f143b8fe775b3f443ce7f3864431ba2df9d0e1e7facca80aa9e48c88a9",
+  "Seed: a retired case": "https://explorer-studio-dev.genlayer.com/tx/0x9b96f908f8ba13f967ed25a74e1cb0ab06b4776bc4b06234b2c87630b3738684",
+  "Golden case 6 (the podcast), UNCLEAR": "https://explorer-studio-dev.genlayer.com/tx/0x3cb57cd567e90b807704bfa09810c726f1c88cd4f8fd8ddc4dd5553b3780a127",
+  "Golden case 9 (an instruction in the scenario), ALLOW": "https://explorer-studio-dev.genlayer.com/tx/0xcb223a387a1eb2308d35e50e5e8693fcf4ba50e653fc211ffef2f8284571efad",
+  "Golden results": "https://github.com/meitipro/dryrun/blob/main/eval/results.md",
+  "Mutation table": "https://github.com/meitipro/dryrun/blob/main/docs/MUTATIONS.md"
+}

@@ -1,0 +1,53 @@
+# Portal entry
+
+Copy-ready. Limits come from the portal form; `python scripts/count_submission.py` checks the counts.
+
+## Project name
+
+Dryrun
+
+## Tags
+
+Social, Community Moderation, Group Consensus
+
+## One-liner
+
+A test suite for the rules your community writes in plain English: add scenarios, validators decide, and a gap earns a bounty.
+
+## Description
+
+Dryrun is a test suite for plain-language rules on GenLayer. An owner registers a rule set and funds a bounty pool. Anyone adds scenarios with the answer they expect, ALLOW or BLOCK, and a stake. Validators label each scenario ALLOW, BLOCK or UNCLEAR under the rules and must agree on that one label. The contract computes PASS, FAIL or UNCLEAR for each case and a GREEN, AMBER or RED suite, never the model. A scenario that exposes a gap earns its author a bounty. Updating the rules turns every case STALE until it runs again. Live on Studio Next, with golden scenarios run through real consensus and published as they came out, misses included.
+
+## Step 1: Register a rule set
+
+Open https://dryrun-genlayer.vercel.app/r, select Connect wallet, then Switch network and Get test GEN. Under Register a rule set type a name and the rules, then select $ dryrun register and confirm. On the suite page type an amount and select $ dryrun fund. Or skip this and use any suite in the list.
+
+## Step 2: Add a case
+
+Open a suite and select $ dryrun add --rules. Type a scenario, for example A member shares a podcast they appeared on in the main channel, pick ALLOW or BLOCK, then select run it, 1 GEN and confirm both transactions.
+
+## Step 3: Read the result
+
+The page shows validators reading, then the bracketed result: [PASS], [FAIL] or [UNCL]. The suite page shows the bar and the colour GREEN, AMBER or RED. An UNCLEAR case credits the bounty to its author.
+
+## Step 4: Fix the rules
+
+As the owner, edit the text under dryrun update-rules and select $ dryrun update-rules. Every case turns [STALE]. Select $ dryrun run --stale on each case and the suite colour is computed again.
+
+## Step 5: Withdraw
+
+Open my cases, from the rail link bounties, and select $ dryrun withdraw to take back your stakes and any bounty you earned.
+
+## Proof
+
+Walked on the live site from three fresh accounts: register_rules, fund_pool, a clear case (PASS) and the spec's podcast case (UNCLEAR, 2 GEN bounty, AMBER), a new version turning both STALE, both run again to GREEN, then a withdrawal; balances match to the wei apart from one uncharged payout-message fee. Golden: 8 of 10 matched, both misses published. Held-out: H1 UNCLEAR, H2 UNCLEAR, H3 BLOCK. 60 of 60 mutants caught. A write counts only when execution_result is SUCCESS.
+
+## Steward note
+
+Known limits: Dryrun predicts what a rule text says. It does not enforce rules, judge fairness or replace a human ruling, and a GREEN suite is only as good as its scenarios. Only the label is stored, not the reason. The spec has no way to take a pool back, so it leaves only as bounties. An empty suite and a case that has not run keep a suite AMBER. The runtime header is the GenVM v0.4 runner the live network now requires. Rule sets are public.
+
+## Links
+
+- Website: https://dryrun-genlayer.vercel.app
+- GitHub: https://github.com/meitipro/dryrun
+- Logo: submission/dryrun-icon-512.png

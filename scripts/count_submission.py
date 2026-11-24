@@ -12,7 +12,7 @@ def section(name: str) -> str:
     return match.group(1).strip() if match else ""
 
 
-limits = {"Description": 1000, "Steward note": 500}
+limits = {"Description": 1000, "Proof": 500, "Steward note": 500}
 bad = 0
 for name, limit in limits.items():
     n = len(section(name))

@@ -1,0 +1,498 @@
+{
+  "runs": {
+    "rp1": {
+      "site": "https://dryrun-genlayer.vercel.app",
+      "contract": "0x7e18514fF9D907b48d7e9588B02F188320E48DFa",
+      "started": "2026-11-24T02:32:01.395Z",
+      "steps": [
+        {
+          "at": "2026-11-24T02:32:07.109Z",
+          "key": "faucet-owner",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0xfdc94dd02d9669485eeb6ed2a7ff006f5ad19ffd",
+          "answered_address": "0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-24T02:32:09.547Z",
+          "key": "faucet-author",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0xb57354c01c0e0ddb72d6344bd0d642b7d127ab82",
+          "answered_address": "0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-24T02:32:12.312Z",
+          "key": "faucet-runner",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0x866fb067a27726640380abeb772797c2fecebfe9",
+          "answered_address": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-24T02:32:20.182Z",
+          "key": "register",
+          "method": "register_rules",
+          "account": "review_owner_rp1",
+          "from": "0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd",
+          "args": [
+            "Reviewer path rp1",
+            "Reviewer path rp1: community-rules\n1. Be respectful, no h..."
+          ],
+          "value": "0",
+          "hash": "0xfb631c1580bc2061bdd7812b2015c270aa2f906d8d246c33f203243640311570",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 12,
+          "refusal": null,
+          "seconds_to_decision": 8
+        },
+        {
+          "at": "2026-11-24T02:32:27.939Z",
+          "key": "fund",
+          "method": "fund_pool",
+          "account": "review_owner_rp1",
+          "from": "0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd",
+          "args": [
+            12
+          ],
+          "value": "5000000000000000000",
+          "hash": "0x85a0e3aedd258141a166b5bac557241e760c4e848892a53949d5a0482912e4a5",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 5000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 8
+        },
+        {
+          "at": "2026-11-24T02:32:36.906Z",
+          "key": "add-clear",
+          "method": "add_case",
+          "account": "review_author_rp1",
+          "from": "0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82",
+          "args": [
+            12,
+            "Someone aged 17 asks to join",
+            "BLOCK"
+          ],
+          "value": "1000000000000000000",
+          "hash": "0x3473e41fa5fcaca6113c9498990c84063ae596456a00619f0d2ec4ce6f058be2",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 27,
+          "refusal": null,
+          "seconds_to_decision": 9
+        },
+        {
+          "at": "2026-11-24T02:32:44.986Z",
+          "key": "add-gap",
+          "method": "add_case",
+          "account": "review_author_rp1",
+          "from": "0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82",
+          "args": [
+            12,
+            "A member shares a podcast they appeared on in the main ch...",
+            "BLOCK"
+          ],
+          "value": "1000000000000000000",
+          "hash": "0x53a67e6b70e2de1b5edece6a068174f3a7a5b50734b6e20ec6b0e0e0a55e8161",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 28,
+          "refusal": null,
+          "seconds_to_decision": 8
+        },
+        {
+          "at": "2026-11-24T02:33:02.432Z",
+          "key": "run-clear",
+          "method": "run",
+          "account": "review_runner_rp1",
+          "from": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+          "args": [
+            27
+          ],
+          "value": "0",
+          "hash": "0x5a67241ca9608f5982a5d29d13301abb2fce596bfa85f6e24fd978c187debf65",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 1,
+          "refusal": null,
+          "seconds_to_decision": 17
+        },
+        {
+          "at": "2026-11-24T02:33:25.199Z",
+          "key": "run-gap",
+          "method": "run",
+          "account": "review_runner_rp1",
+          "from": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+          "args": [
+            28
+          ],
+          "value": "0",
+          "hash": "0x6caaed8e0ca65b2c160b9a7687904acf9b63ae5970bb13187061d8a50686e8b4",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 1,
+          "refusal": null,
+          "seconds_to_decision": 23
+        },
+        {
+          "at": "2026-11-24T02:33:27.598Z",
+          "key": "read-v1",
+          "ok": true,
+          "why": "both cases have run on version 1",
+          "rules_id": 12,
+          "version": 1,
+          "suite": "AMBER",
+          "counts": {
+            "live": 2,
+            "pass": 1,
+            "fail": 0,
+            "unclear": 1,
+            "stale": 0,
+            "not_run": 0,
+            "retired": 0
+          },
+          "pool": "3000000000000000000",
+          "cases": [
+            {
+              "id": 27,
+              "expected": "BLOCK",
+              "label": "BLOCK",
+              "result": "PASS",
+              "bounty": "0"
+            },
+            {
+              "id": 28,
+              "expected": "BLOCK",
+              "label": "UNCLEAR",
+              "result": "UNCLEAR",
+              "bounty": "2000000000000000000"
+            }
+          ]
+        },
+        {
+          "at": "2026-11-24T02:33:34.954Z",
+          "key": "update",
+          "method": "update_rules",
+          "account": "review_owner_rp1",
+          "from": "0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd",
+          "args": [
+            12,
+            "Reviewer path rp1: community-rules\n1. Be respectful, no h..."
+          ],
+          "value": "0",
+          "hash": "0x674ed0dd4771edb4b2d1f9e17460343d1d453c2d7d6cf635fd74bd9fb7e54fbe",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 2,
+          "refusal": null,
+          "seconds_to_decision": 7
+        },
+        {
+          "at": "2026-11-24T02:33:38.091Z",
+          "key": "read-stale",
+          "ok": true,
+          "why": "version 2 was written: every live case is STALE until it runs again",
+          "rules_id": 12,
+          "version": 2,
+          "suite": "AMBER",
+          "counts": {
+            "live": 2,
+            "pass": 0,
+            "fail": 0,
+            "unclear": 0,
+            "stale": 2,
+            "not_run": 0,
+            "retired": 0
+          },
+          "pool": "3000000000000000000",
+          "cases": [
+            {
+              "id": 27,
+              "expected": "BLOCK",
+              "label": "BLOCK",
+              "result": "STALE",
+              "bounty": "0"
+            },
+            {
+              "id": 28,
+              "expected": "BLOCK",
+              "label": "UNCLEAR",
+              "result": "STALE",
+              "bounty": "2000000000000000000"
+            }
+          ]
+        },
+        {
+          "at": "2026-11-24T02:33:51.636Z",
+          "key": "rerun-clear",
+          "method": "run",
+          "account": "review_runner_rp1",
+          "from": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+          "args": [
+            27
+          ],
+          "value": "0",
+          "hash": "0x75f3ec0033bd7650741838a665ba7bc740a19bf1a404514cd90c60ea3745faf2",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 2,
+          "refusal": null,
+          "seconds_to_decision": 14
+        },
+        {
+          "at": "2026-11-24T02:34:10.177Z",
+          "key": "rerun-gap",
+          "method": "run",
+          "account": "review_runner_rp1",
+          "from": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+          "args": [
+            28
+          ],
+          "value": "0",
+          "hash": "0xcb03d742c64ba217c8544f95892ef031797a62a1a864e642238eb58cf5447bd5",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 2,
+          "refusal": null,
+          "seconds_to_decision": 19
+        },
+        {
+          "at": "2026-11-24T02:34:13.606Z",
+          "key": "read-v2",
+          "ok": true,
+          "why": "both cases ran again on version 2",
+          "rules_id": 12,
+          "version": 2,
+          "suite": "GREEN",
+          "counts": {
+            "live": 2,
+            "pass": 2,
+            "fail": 0,
+            "unclear": 0,
+            "stale": 0,
+            "not_run": 0,
+            "retired": 0
+          },
+          "pool": "3000000000000000000",
+          "cases": [
+            {
+              "id": 27,
+              "expected": "BLOCK",
+              "label": "BLOCK",
+              "result": "PASS",
+              "bounty": "0"
+            },
+            {
+              "id": 28,
+              "expected": "BLOCK",
+              "label": "BLOCK",
+              "result": "PASS",
+              "bounty": "2000000000000000000"
+            }
+          ]
+        },
+        {
+          "at": "2026-11-24T02:34:53.793Z",
+          "key": "author-withdraw",
+          "method": "withdraw",
+          "account": "review_author_rp1",
+          "from": "0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82",
+          "args": [],
+          "value": "0",
+          "hash": "0x2631cf24ac119eb4f34f2bbfac82da202375b6133d8d8742dfdd0c750c483d7f",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 4000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 8,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-11-24T02:34:55.288Z",
+          "key": "balance-author",
+          "ok": false,
+          "owed": "4000000000000000000",
+          "before": "17999842734749994354",
+          "after": "21999716428749991531",
+          "net_fee": "151306000002823",
+          "expected": "21999691428749991531",
+          "difference": "25000000000000"
+        },
+        {
+          "at": "2026-11-24T02:34:58.363Z",
+          "key": "page-suite",
+          "ok": true,
+          "url": "https://dryrun-genlayer.vercel.app/r/12",
+          "http": 200
+        },
+        {
+          "at": "2026-11-24T02:34:58.681Z",
+          "key": "page-history",
+          "ok": true,
+          "url": "https://dryrun-genlayer.vercel.app/r/12/history",
+          "http": 200
+        },
+        {
+          "at": "2026-11-24T02:34:59.017Z",
+          "key": "page-add",
+          "ok": true,
+          "url": "https://dryrun-genlayer.vercel.app/r/12/add",
+          "http": 200
+        }
+      ],
+      "accounts": {
+        "owner": "0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd",
+        "author": "0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82",
+        "runner": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+        "nonces_at_start": {
+          "owner": 0,
+          "author": 0,
+          "runner": 0
+        }
+      },
+      "finished": "2026-11-24T02:34:59.017Z",
+      "reconciled": {
+        "at": "2026-11-24T02:35:06.244Z",
+        "owner": {
+          "address": "0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd",
+          "faucet": "20000000000000000000",
+          "received": "0",
+          "sent": "5000000000000000000",
+          "fees": "235900500008469",
+          "expected": "14999764099499991531",
+          "actual": "14999764099499991531",
+          "exact": true,
+          "difference": "0",
+          "message_fee_consumed": "0",
+          "expected_without_message_fee": "14999764099499991531",
+          "exact_without_message_fee": true,
+          "transactions": [
+            {
+              "key": "register",
+              "hash": "0xfb631c1580bc2061bdd7812b2015c270aa2f906d8d246c33f203243640311570",
+              "value": "0",
+              "net_fee": "78636750002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "fund",
+              "hash": "0x85a0e3aedd258141a166b5bac557241e760c4e848892a53949d5a0482912e4a5",
+              "value": "5000000000000000000",
+              "net_fee": "78628500002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "update",
+              "hash": "0x674ed0dd4771edb4b2d1f9e17460343d1d453c2d7d6cf635fd74bd9fb7e54fbe",
+              "value": "0",
+              "net_fee": "78635250002823",
+              "message_fee_consumed": "0"
+            }
+          ]
+        },
+        "author": {
+          "address": "0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82",
+          "faucet": "20000000000000000000",
+          "received": "4000000000000000000",
+          "sent": "2000000000000000000",
+          "fees": "308571250008469",
+          "expected": "21999691428749991531",
+          "actual": "21999716428749991531",
+          "exact": false,
+          "difference": "25000000000000",
+          "message_fee_consumed": "25000000000000",
+          "expected_without_message_fee": "21999716428749991531",
+          "exact_without_message_fee": true,
+          "transactions": [
+            {
+              "key": "add-clear",
+              "hash": "0x3473e41fa5fcaca6113c9498990c84063ae596456a00619f0d2ec4ce6f058be2",
+              "value": "1000000000000000000",
+              "net_fee": "78632250002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "add-gap",
+              "hash": "0x53a67e6b70e2de1b5edece6a068174f3a7a5b50734b6e20ec6b0e0e0a55e8161",
+              "value": "1000000000000000000",
+              "net_fee": "78633000002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "author-withdraw",
+              "hash": "0x2631cf24ac119eb4f34f2bbfac82da202375b6133d8d8742dfdd0c750c483d7f",
+              "value": "0",
+              "net_fee": "151306000002823",
+              "message_fee_consumed": "25000000000000"
+            }
+          ]
+        },
+        "runner": {
+          "address": "0x866fB067a27726640380aBEb772797c2FeCEbfe9",
+          "faucet": "20000000000000000000",
+          "received": "0",
+          "sent": "0",
+          "fees": "314767750011292",
+          "expected": "19999685232249988708",
+          "actual": "19999685232249988708",
+          "exact": true,
+          "difference": "0",
+          "message_fee_consumed": "0",
+          "expected_without_message_fee": "19999685232249988708",
+          "exact_without_message_fee": true,
+          "transactions": [
+            {
+              "key": "run-clear",
+              "hash": "0x5a67241ca9608f5982a5d29d13301abb2fce596bfa85f6e24fd978c187debf65",
+              "value": "0",
+              "net_fee": "78690750002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "run-gap",
+              "hash": "0x6caaed8e0ca65b2c160b9a7687904acf9b63ae5970bb13187061d8a50686e8b4",
+              "value": "0",
+              "net_fee": "78698750002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "rerun-clear",
+              "hash": "0x75f3ec0033bd7650741838a665ba7bc740a19bf1a404514cd90c60ea3745faf2",
+              "value": "0",
+              "net_fee": "78689250002823",
+              "message_fee_consumed": "0"
+            },
+            {
+              "key": "rerun-gap",
+              "hash": "0xcb03d742c64ba217c8544f95892ef031797a62a1a864e642238eb58cf5447bd5",
+              "value": "0",
+              "net_fee": "78689000002823",
+              "message_fee_consumed": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

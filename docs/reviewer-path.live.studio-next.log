@@ -1,0 +1,28 @@
+accounts: {"owner":"0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd","author":"0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82","runner":"0x866fB067a27726640380aBEb772797c2FeCEbfe9"} nonces at start {"owner":0,"author":0,"runner":0}
+faucet-owner: HTTP 200 0 GEN -> 20 GEN 
+faucet-author: HTTP 200 0 GEN -> 20 GEN 
+faucet-runner: HTTP 200 0 GEN -> 20 GEN 
+register: register_rules ok in 8 s  0xfb631c1580bc2061bdd7812b2015c270aa2f906d8d246c33f203243640311570
+fund: fund_pool ok in 8 s  0x85a0e3aedd258141a166b5bac557241e760c4e848892a53949d5a0482912e4a5
+add-clear: add_case ok in 9 s  0x3473e41fa5fcaca6113c9498990c84063ae596456a00619f0d2ec4ce6f058be2
+add-gap: add_case ok in 8 s  0x53a67e6b70e2de1b5edece6a068174f3a7a5b50734b6e20ec6b0e0e0a55e8161
+run-clear: run ok in 17 s  0x5a67241ca9608f5982a5d29d13301abb2fce596bfa85f6e24fd978c187debf65
+run-gap: run ok in 23 s  0x6caaed8e0ca65b2c160b9a7687904acf9b63ae5970bb13187061d8a50686e8b4
+  -> v1 AMBER {"live":2,"pass":1,"fail":0,"unclear":1,"stale":0,"not_run":0,"retired":0} #27 BLOCK PASS, #28 UNCLEAR UNCLEAR
+update: update_rules ok in 7 s  0x674ed0dd4771edb4b2d1f9e17460343d1d453c2d7d6cf635fd74bd9fb7e54fbe
+  -> v2 AMBER {"live":2,"pass":0,"fail":0,"unclear":0,"stale":2,"not_run":0,"retired":0} #27 BLOCK STALE, #28 UNCLEAR STALE
+rerun-clear: run ok in 14 s  0x75f3ec0033bd7650741838a665ba7bc740a19bf1a404514cd90c60ea3745faf2
+rerun-gap: run ok in 19 s  0xcb03d742c64ba217c8544f95892ef031797a62a1a864e642238eb58cf5447bd5
+  -> v2 GREEN {"live":2,"pass":2,"fail":0,"unclear":0,"stale":0,"not_run":0,"retired":0} #27 BLOCK PASS, #28 BLOCK PASS
+author-withdraw: withdraw ok in 8 s  0x2631cf24ac119eb4f34f2bbfac82da202375b6133d8d8742dfdd0c750c483d7f
+  author: 17.999842734749993 GEN -> 21.99971642874999 GEN; owed 4 GEN, fee 0.000151306000002823 GEN; difference 25000000000000 wei
+page-suite: HTTP 200 shows it  https://dryrun-genlayer.vercel.app/r/12
+page-history: HTTP 200 shows it  https://dryrun-genlayer.vercel.app/r/12/history
+page-add: HTTP 200 shows it  https://dryrun-genlayer.vercel.app/r/12/add
+
+recorded in docs/reviewer-path.studio-next.json (run rp1)
+exit 0
+owner 0xFdC94dd02d9669485eEB6eD2A7FF006f5ad19FFd: faucet 20000000000000000000 + received 0 - sent 5000000000000000000 - fees 235900500008469 = 14999764099499991531; balance 14999764099499991531; EXACT to the wei; message fee consumed 0; without it EXACT
+author 0xB57354C01C0e0dDb72D6344bD0d642b7D127aB82: faucet 20000000000000000000 + received 4000000000000000000 - sent 2000000000000000000 - fees 308571250008469 = 21999691428749991531; balance 21999716428749991531; difference 25000000000000 wei; message fee consumed 25000000000000; without it EXACT
+runner 0x866fB067a27726640380aBEb772797c2FeCEbfe9: faucet 20000000000000000000 + received 0 - sent 0 - fees 314767750011292 = 19999685232249988708; balance 19999685232249988708; EXACT to the wei; message fee consumed 0; without it EXACT
+reconcile exit 0
